@@ -50,12 +50,12 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
-Database, table
-OLTP(Online Transaction Processing): 거래를 하기위해 사용되는 데이터베이스
-테이블 데이터 형태: 행(row), 열(column)
----> 스프레드 시트와 유사
-OLAP(online Analytical Processing): 속도 기능이 발전된 버전
-데이터웨어하우스: 데이터를 한 곳에 모아 저장
+Database, table  
+OLTP(Online Transaction Processing): 거래를 하기위해 사용되는 데이터베이스  
+테이블 데이터 형태: 행(row), 열(column)  
+---> 스프레드 시트와 유사  
+OLAP(online Analytical Processing): 속도 기능이 발전된 버전  
+데이터웨어하우스: 데이터를 한 곳에 모아 저장  
 
 ## 2-1. 데이터 활용 Overview
 
@@ -66,8 +66,8 @@ OLAP(online Analytical Processing): 속도 기능이 발전된 버전
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
-<img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/6efff947-9398-4705-855a-6af26e2d9c11" />
-문제정의 시, MECE 유의 (겹치지 않게 고민하기)
+<img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/6efff947-9398-4705-855a-6af26e2d9c11" />  
+문제정의 시, MECE 유의 (겹치지 않게 고민하기)  
 
 
 
@@ -77,13 +77,13 @@ OLAP(online Analytical Processing): 속도 기능이 발전된 버전
 ✅ 학습 목표 :
 * 데이터가 저장되는 형태를 알고 저장된 데이터를 활용할 수 있다. 
 ~~~
-SQL쿼리 작성 전, 데이터를 제대로 이해해야 함. (데이터저장위치, 어떤 데이터, 컬럼의 의미)
-데이터 저장 형태를 파악하는 법: ERD(Entity Relationship Diagram)
+SQL쿼리 작성 전, 데이터를 제대로 이해해야 함. (데이터저장위치, 어떤 데이터, 컬럼의 의미)  
+데이터 저장 형태를 파악하는 법: ERD(Entity Relationship Diagram)  
 ~~~
-**회사 존재 데이터(예시)**
-1) 서비스에 사용될 DB: 유저table, 배송table
-2) 앱/웹 로그 데이터: 과정을 알 수 있는 데이터(회원가입-페이지확인 등)
-3) 공공데이터, 서드파티 데이터
+**회사 존재 데이터(예시)**  
+1) 서비스에 사용될 DB: 유저table, 배송table  
+2) 앱/웹 로그 데이터: 과정을 알 수 있는 데이터(회원가입-페이지확인 등)  
+3) 공공데이터, 서드파티 데이터  
 ~~~
 
 
