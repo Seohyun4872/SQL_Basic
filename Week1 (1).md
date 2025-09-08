@@ -94,10 +94,10 @@ SQL쿼리 작성 전, 데이터를 제대로 이해해야 함. (데이터저장�
 ---
 # 2️⃣ 학습 인증란
 <!-- 이 글을 지우고, 여기에 학습한 것을 인증해주세요.-->
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/1d1714c5-c1e4-47b6-8491-f3db47711e6b" />  
 
+<img width="600" height="380" alt="image" src="https://github.com/user-attachments/assets/01287629-41c7-4837-9a47-89544bb60f42" />
 
-<br>
-<br>
 
 ---
 
