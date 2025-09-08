@@ -67,6 +67,7 @@ OLAP(online Analytical Processing): 속도 기능이 발전된 버전
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 <img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/6efff947-9398-4705-855a-6af26e2d9c11" />  
+
 문제정의 시, MECE 유의 (겹치지 않게 고민하기)  
 
 
