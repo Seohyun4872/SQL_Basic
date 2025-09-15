@@ -47,6 +47,16 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+SSELECT col1 AS new_name  #별칭  
+col2,  
+col3  
+FROM Dataset.Table # 어떤 테이블에서 데이터 불러오는지  
+WHERE col1 = 1 #조건문  
+
+SELECT * FROM table # 모든 컬럼 출력  
+
+**빅쿼리에선 Dataset.table로 명시  
+**From --> Where --> select 로 작동  
 
 
 ## 2-5. 집계 (Group By / HAVING / SUM,COUNT)
@@ -59,13 +69,51 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+집계하다: 모아서 계산하다  
+**GROUP BY**  
+특정 컬럼을 기준으로 모으면서 다른 컬럼에선 집계 가능  
+**HAVING**
+집계한 결과를 조건 설정 
+~~~
+SELECT 집계컬럼1, AVG(attack) as avg_attack
+FROM table  
+GROUP BY 집계컬럼1  
+~~~
+**DISTINCT**
+중복을 제거  
+~~~
+SELECT 집계할 컬럼1, COUNT(DISTINCT 컬럼2)
+FROM table
+GROUP BY 집계할 컬럼1
+~~~
+
+*WHERE과 HAVING의 차이
+Where은 원본데이터에 조건 설정, HAVING은 group by와 세트로 쓰이며 그룹화 된 것에 조건을 걸고 싶을 때 사용
+~~~
+EX) Select col1, col2,
+count(col1) as A
+From table
+where col1>=3
+group by col1,col2
+Having col1_count>3
+~~~
+서브쿼리: Select 문 안에 있는 또다른 select 쿼리, From절에 또다른 select문을 넣을 수 있음  
+서브쿼리 내부에서는 having으로 조건 설정  
+
+**ORDER BY**
+쿼리 맨 마지막에 순서 정렬해주는 것으로 desc, asc(default) 존재  
+**LIMIT**
+order by 절 뒤에 오는 것으로 limit n --> n만큼 잘라서 출력  
 
 
 
 # 2️⃣ 학습 인증란
 
-<!-- 이 글을 지우고, 여기에 학습한 것을 인증해주세요.-->
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/d0683227-cfb9-4a9e-a4d0-a9549f3bd010" />
 
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/08118c11-04af-409c-9836-66b3715fd7af" />
+
+<img width="1400" height="800" alt="image" src="https://github.com/user-attachments/assets/40be7c56-aabf-4024-bb09-f59d70966615" />
 
 
 <br><br>
@@ -90,7 +138,13 @@ FROM pokemon;
 
 
 ~~~
-여기에 답을 작성해주세요!
+#수정본
+SELECT kor_name AS '포켓몬 이름', ID ;
+FROM basic.pokemon ;
+WHERE type = 'Electric' ;
+# 이유
+from 절이 where 조건 절보다 위에 와야 하며,
+예시로 제시된 포켓몬 데이터셋 컬럼에는 name이라는 컬럼은 존재하지 않고 kor_name 또는 eng_name 컬럼만 존재하기에 이에 맞춰 해당 컬럼을 도출해야 한다.   
 ~~~
 
 
@@ -109,7 +163,13 @@ GROUP BY type;
 
 
 ~~~
-여기에 답을 작성해주세요.
+#수정본
+SELECT type1, AVG(attack) as avg_attack
+FROM basic.pokemon
+GROUP BY type1
+HAVING avg_attack >= 60 ;
+#이유
+우선 group by에 대한 조건을 추가하는 것이므로 having 절을 써야 하며, 그룹화된 컬럼인 avg_attack을 기준으로 60이상인 타입을 조회해야 하므로 위와 같이 수정해야 한다. 
 ~~~
 
 
