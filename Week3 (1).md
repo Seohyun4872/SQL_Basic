@@ -63,10 +63,12 @@
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 **1번문제: 포켓몬 중에 type2가 없는 포켓몬의 수를 작성하는 쿼리**
+~~~
 select 
 count(id) as cnt
  from basic.pokemon
-where type2 is null  
+where type2 is null
+~~~
 배운점: 맞음, isnull사용법을 배움
 
 **2번문제: type2가 없는 포켓몬의 type1과 type1의 포켓몬 수를 알려주는 쿼리를 작성해주세요. 단 type1의 포켓몬 수가 큰 순으로 정렬해주세요.**  
@@ -206,6 +208,9 @@ group by all을 활용하면 추가하지 않더라도 자동으로 앞에 언�
 <img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/e3a33c50-1ad2-4452-88c8-78ad79ff5004" />
 
 <img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/7165bcdb-6191-43be-a0f8-afe5715df93c" />
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/a1b6c92f-a650-4990-bd02-1da8f644f082" />
+
 
 -->
 
