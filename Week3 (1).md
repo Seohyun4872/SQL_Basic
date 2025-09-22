@@ -62,7 +62,89 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+**1번문제: 포켓몬 중에 type2가 없는 포켓몬의 수를 작성하는 쿼리**
+select 
+count(id) as cnt
+ from basic.pokemon
+where type2 is null  
+배운점: 맞음, isnull사용법을 배움
 
+**2번문제: type2가 없는 포켓몬의 type1과 type1의 포켓몬 수를 알려주는 쿼리를 작성해주세요. 단 type1의 포켓몬 수가 큰 순으로 정렬해주세요.**  
+~~~
+select 
+sum(id) as A, type1
+ from basic.pokemon
+where type2 is null 
+group by type1
+order by A desc  
+--> 정답  
+select 
+count(id) as pokemon_cnt, type1
+ from basic.pokemon
+where type2 is null 
+group by type1
+order by pokemon_cnt desc
+~~~
+배운점:집계함수를 사용해야 하므로 groupby를 사용해야 한다는 점과 sum이 아닌 count()를 사용하는 게 해당 문제에 더 잘 맞는다는 것을 배웠다.  
+
+**3번문제: type2 상관없이 type1의 포켓몬 수를 알 수 있는 쿼리를 작성해주세요.**  
+~~~
+select 
+count(id) as A, type1
+ from basic.pokemon
+group by type1
+order by A desc
+--> 정답
+select 
+count(id) as pokemon_cnt, type1  #아니면 count(DISTINCT id) 사용 가능
+ from basic.pokemon
+group by type1
+order by A desc
+~~~
+배운점: distinct는 고유한 값만 보고 싶을 때 사용한다.  
+
+**4번문제: 전설여부에 따른 포켓몬 수를 알 수 있는 쿼리를 작성해주세요**  
+~~~
+select 
+count(id) as pokemon_cnt, is_legendary
+ from basic.pokemon
+group by is_legendary
+~~~
+배운점: 맞음, 컬럼 이름이 길 경우 1,2,3 등으로 대체해서 사용 가능하다. 결과를 빠르게 보고 싶을 때 유용함.  
+
+**5번문제: 동명이인이 있는 이름은 무엇일까요? (한번에 찾으려고 하지 않고 단계적으로 가도 괜찮아요)**  
+~~~
+select 
+count(name) as cnt, name
+from basic.trainer
+group by name
+having cnt >=2
+~~~
+
+~~~
+서브쿼리 활용해서 푸는 경우
+Select * from
+( select name, count(name) as cnt from basic.trainer Group by name)
+where cnt >= 2
+~~~
+배운 점: 맞춤, having 대신 서브쿼리를 활용해서 푸는 법을 생각해볼 수 있었다.  
+
+**6번문제: trainer 테이블에서 "Iris"트레이너의 정보를 알 수 있는 쿼리를 작성해주세요**  
+~~~
+select 
+* 
+from basic.trainer
+where name = "Iris"
+~~~
+
+**7번문제: trainer 테이블에서 "Iris","Whitney", "Cynthia" 트레이너의 정보를 알 수 있는 쿼리를 작성해주세요**  
+~~~
+select 
+* 
+from basic.trainer
+where name in ("Iris","Whitney", "Cynthia")
+~~~
+배운점: OR을 써도 되지만, in 함수를 통해 더 간결하게 쿼리를 구성할 수 있다는 것을 알게 되었. 
 
 
 ## 2-8. 새로운 집계함수
@@ -106,7 +188,14 @@
 
 # 2️⃣ 학습 인증란
 
-<!-- 이 글을 지우고, 여기에 학습한 것을 인증해주세요.-->
+<!-- 
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/ad5bb9de-83e2-4a5c-97a8-ca0d3142f393" />
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/e3a33c50-1ad2-4452-88c8-78ad79ff5004" />
+
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/7165bcdb-6191-43be-a0f8-afe5715df93c" />
+
+-->
 
 
 
