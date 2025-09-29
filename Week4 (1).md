@@ -55,8 +55,29 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+오류메세지를 통해 문제를 진단할 수 있음  
+1) syntax Error(문법오류) : 에러메세지를 번역하고 해결법 찾아보기(구글, 공식문서, 챗지피티)
+   - Select list must not be empty: select목록은 그 사이에 컬럼이있어야 했는데 비어있어서
+   - 밑줄 앞, 뒤에 보통 문제가 있을 가능성이 농후
+~~~
+<ex1>
+SELECT Count (id,kor_name) from basic.pokemon
+-->  오류: 집계함수 count안에는 하나의 인자만 들어가야 함.
+~~~
+~~~
+<ex2>
+SELECT type1, count(id) as cnt
+from basic.pokemon Group By type1
 
-
+select * from basic.trainer
+--> 오류: 세미 콜론 필요/ 하나의 쿼리엔 select가 1개만 있어야 함.
+~~~
+~~~
+SELECT * from basic.trainer LIMIT 10
+where id=3
+--> 오류: 입력이 끝날 것으로 예상되었지만 [5:1]에서 키워드 where을 얻음
+--> 즉, limit은 where뒤에 붙여줘야하는데 where앞에 와서 생기는 
+~~~
 
 ## 4-2. 데이터 타입과 데이터 변환(CAST, SAFE_CAST)
 
@@ -67,8 +88,17 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+SELECT문에서도 데이터를 변환시킬 수 있다!  
+데이터 타입: 숫자, 문자, 시간/날짜, 부울(Bool)
 
+자료타입을 변경하는 함수:CAST
+select cast(1 as STRING) #숫자 1을 문자 1로 변경
+select cast("school" as int64) #오류 발생  
+--> school은 숫자열 변환 불가
+--> SAFE_CAST 사용: 변환이 실패할 경우 NULL 반환
 
+수학함수 : 암기하지 말고, 필요할 때 찾기 
+- SAFE_DIVIDE : 나누기가 안될 때, 오류가 발생하는게 아닌 null이 나옴
 
 ## 4-3. 문자열 함수(CONCAT, SPLIT, REPLACE, TRIM, UPPER)
 
@@ -78,7 +108,31 @@
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+**문자열 함수**
+1) CONCAT: 합치기  
+SELECT  
+concat("안녕","하세요") as result;  
+--CONCAT(컬럼1,컬럼2,...)  
 
+2) SPLIT:나누기  
+select  
+split("가,나,다,라", ",") as result;  
+-- split(문자열 원본, 나눌기준이 되는 문자)  
+
+3) 문자열 자르기 : TRIM  
+select  
+TRIM("안녕하세요", "하세요") as result;  
+-- TRIM(문자열원본, 자를단어)  
+
+4) 영어 소문자를 대문자로 변경: UPPER  
+select  
+upper("abc") as result;  
+--UPPER(문자열원본)  
+
+5) 문자열 대체: REPLACE  
+select  
+REPLACE("안녕하세요","안녕","실천") as replace_ex  
+-- REPLACE(문자열원본, 찾을 단어, 바꿀 단어)  
 
 
 ## 4-4. 날짜 및 시간 데이터 이해하기(1) (타임존, UTC, Millisecond, TIMESTAMP/DATETIME)
