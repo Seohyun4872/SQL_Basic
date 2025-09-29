@@ -180,9 +180,9 @@ REPLACE("안녕하세요","안녕","실천") as replace_ex
 >
 > :  https://school.programmers.co.kr/learn/courses/30/lessons/131535#
 
-<!-- 문제를 풀기 위하여 로그인이  필요합니다. -->
+<img width="700" height="250" alt="image" src="https://github.com/user-attachments/assets/2ea957a0-726f-4698-92c1-2dca16791bb1" />
 
-<!-- 정답을 맞추게 되면, 정답입니다. 라는 칸이 생성되는데 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. --> 
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/8910d6b8-c817-4b03-a525-dde117eb0cfc" />
 
 
 
@@ -209,10 +209,16 @@ WHERE AGE BETWEEN 20 AND 29
 오류 메시지 : SELECT list expression references column AGE which is neither grouped nor aggregated
 ~~~
 
-
-
 ~~~
-여기에 답을 작성해주세요!
+첫번째 오류메세지: count()함수에는 인수가 한개만 들어갈 수 있는데 현재 2개 인수(age, joined)를 사용했기에 오류 발생  
+두번째 오류메세지: select절에 age를 포함시켰고, count(*)이 같이 있기에 2개를 같이 조회하기 위해서는 age를 기준으로 그룹화 해줬어야 하는데 groupby를 사용하지 않았기에 오류 발생  
+
+최종 정답 코드  
+SELECT 
+count(USER_ID) as USERS
+from USER_INFO
+WHERE AGE between 20 and 29
+and YEAR(JOINED)=2021 ;
 ~~~
 
 
