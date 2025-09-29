@@ -134,6 +134,9 @@ select
 REPLACE("안녕하세요","안녕","실천") as replace_ex  
 -- REPLACE(문자열원본, 찾을 단어, 바꿀 단어)  
 
+<실습내용>
+<img width="800" height="705" alt="image" src="https://github.com/user-attachments/assets/a38ee1a8-a66c-4071-b1e3-00688e99a855" />
+
 
 ## 4-4. 날짜 및 시간 데이터 이해하기(1) (타임존, UTC, Millisecond, TIMESTAMP/DATETIME)
 
@@ -146,7 +149,16 @@ REPLACE("안녕하세요","안녕","실천") as replace_ex
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 
-
+**날짜 및 시간 데이터 타입 파악**
+- DATE, DATETIME, TIMESTAMP  
+- DATE+TIME = DATETIME
+- Datetime은 T가 나오고 한국 zone (Asia/Seoul) 사용 시 한국시간과 동일함. 
+- TIMESTAMP: 시간 도장, UTC부터 경과한 시간을 나타내는 값(한국시간 - 9시간)
+- MILLISESECOND(ms): 천분의 1초 (1000ms=1초)
+- microsecond: 1/1000ms, 1/1,000,000 sec
+**날짜 및 시간 데이터 관련 내용**
+- GMT: 영국 그리니치 천문대 기준 시간 차이 조정하기 위한 구분선 (한국시간: GMT+9)
+- 최근엔 UTC를 많이 사용: 국제적인 표준시간 (한국시간: UTC+9)
 
 <br>
 
