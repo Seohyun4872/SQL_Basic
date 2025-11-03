@@ -155,7 +155,18 @@ FROM (테이블 이름)
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+<img width="1315" height="1085" alt="image" src="https://github.com/user-attachments/assets/7b2f41bf-014c-4422-9487-26b52df0d604" />
+항상 컬럼 내용을 잘 확인한 뒤 진행하기
 
+<img width="1316" height="1105" alt="image" src="https://github.com/user-attachments/assets/7f6ea0bf-bb36-488c-8117-116ccdd907eb" />
+between 함수 활용, extract 함수 활용해서 문제풀이 진행함.
+특히, 본격적인 문제풀이 전 countif를 활용해서 datetime을 검증했던 것이 인상깊었음.
+
+<img width="2043" height="1187" alt="image" src="https://github.com/user-attachments/assets/6e1d0b57-5f38-46b8-bf72-68f8e72edc75" />
+select 함수 내에서 if함수를 사용할 때, 컬럼처럼 사용해야 하기에 *과 if 사이에 ,를 작성해줘야 하는 것을 알고 주의하게 됨. 
+
+<img width="1312" height="1081" alt="image" src="https://github.com/user-attachments/assets/5adefc88-6953-47fa-9eaa-9f697ef4bdbb" />
+case when의 기본적인 활용방식 습득함. 
 
 
 <br>
@@ -191,7 +202,8 @@ FROM (테이블 이름)
 <!-- 틀린쿼리에 대한 오류의 원인도 같이 작성해주세요. 문제에서 제공된 login_data 컬럼은 DATE type의 데이터를 가지고 있다고 가정하시면 됩니다. -->
 
 ~~~
-여기에 답을 작성해주세요!
+2번: 2021년 사용자 수 집계가 되고 있지 않음
+3번: login_date는 date type인데 그냥 = 2021 이렇게 해버리면 형식이 맞지 않아 오류 발생. extract해줘야 함. 
 ~~~
 
 
@@ -222,7 +234,8 @@ FROM pokemon;
 <!-- 근거와 함께 답을 작성해주세요 -->
 
 ~~~
-여기에 답을 작성해주세요!
+type1이 fire, water 둘 다 아닌 경우 normal이 출력되는 것이므로
+Pikachu와 Bulbasaur 포켓몬은 normal이 출력될 것이다. 
 ~~~
 
 
