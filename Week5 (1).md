@@ -14,6 +14,55 @@
 
 ### 4-4. 날짜 및 시간 데이터 이해하기(2) (EXTRACT, DATETIME_TRUNC, PARSE_DATETIME, FROMAT_DATETIME)
 
+### 4-5. 시간 데이터 연습문제 1~2번
+
+### 4-5. 시간 데이터 연습문제 3~5번
+
+### 4-6. 조건문 (CASE WHEN, IF)
+
+### 4-7. 조건문 연습 문제
+
+
+
+### 4-8. 정리
+
+
+
+### 4-9. BigQuery 공식 문서 확인하는 법
+
+(강의에서 연습문제가 많아서 따로 프로그래머스 문제 과제는 없습니다.)
+
+
+
+## 🏁 강의 수강 (Study Schedule)
+
+| 주차  | 공부 범위              | 완료 여부 |
+| ----- | ---------------------- | --------- |
+| 1주차 | 섹션 **1-1** ~ **2-2** | ✅         |
+| 2주차 | 섹션 **2-3** ~ **2-5** | ✅         |
+| 3주차 | 섹션 **2-6** ~ **3-3** | ✅         |
+| 4주차 | 섹션 **3-4** ~ **4-4** | ✅         |
+| 5주차 | 섹션 **4-4** ~ **4-9** | ✅         |
+| 6주차 | 섹션 **5-1** ~ **5-7** | 🍽️         |
+| 7주차 | 섹션 **6-1** ~ **6-6** | 🍽️         |
+
+<br>
+
+
+
+<!-- 여기까진 그대로 둬 주세요-->
+
+---
+
+# 4-4. 날짜 및 시간 데이터 이해하기(2) (EXTRACT, DATETIME_TRUNC, PARSE_DATETIME, FROMAT_DATETIME)
+
+~~~
+✅ 학습 목표 :
+* 날짜 및 시간 데이터에 대해서 더 자세히 설명할 수 있다. 
+* CURRENT_TIME, EXTRACT, DATETIME_TRUNC, PARSE_DATETIME, FROMAT_DATETIME 을 설명할 수 있다. 
+~~~
+
+<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 CURRENT_DATETIME([time_zone]): 현재의 datetime 출력
 Extract 함수: datetime에서 특정 부분만 추출하고 싶을 때 (년도, 월, 일, 시간 등)
 ~~~
@@ -62,62 +111,11 @@ DATETIME_DIFF(첫 datetime, 두번째 datetime, 궁금한 차이- day,week or mo
 - 문자열=>DATETIME:PARSE_DATETIME
 - DATETIME=>문자열:FORMAT_DATETIME
 
-- 현재DATETIME:CURRENT_DATETIME
-- DATETIME의특정부분추출:EXTRACT
+- 현재DATETIME:CURRENT_DATETIME (타임존 필요)
+- DATETIME의특정부분추출:EXTRACT (파트 FROM DATETIME)
 - DATETIME특정부분자르기:DATETIME_TRUNC
-- DATETIME차이구하기:DATETIME_DIFF
-
-- 현재DATETIME:CURRENT_DATETIME
-- DATETIME의특정부분추출:EXTRACT
-- DATETIME특정부분자르기:DATETIME_TRUNC
-- DATETIME차이구하기:DATETIME_DIFF
+- DATETIME차이구하기:DATETIME_DIFF 
 ~~~
-
-### 4-5. 시간 데이터 연습문제 1~2번
-
-### 4-5. 시간 데이터 연습문제 3~5번
-
-### 4-6. 조건문 (CASE WHEN, IF)
-
-### 4-7. 조건문 연습 문제
-
-### 4-8. 정리
-
-### 4-9. BigQuery 공식 문서 확인하는 법
-
-(강의에서 연습문제가 많아서 따로 프로그래머스 문제 과제는 없습니다.)
-
-
-
-## 🏁 강의 수강 (Study Schedule)
-
-| 주차  | 공부 범위              | 완료 여부 |
-| ----- | ---------------------- | --------- |
-| 1주차 | 섹션 **1-1** ~ **2-2** | ✅         |
-| 2주차 | 섹션 **2-3** ~ **2-5** | ✅         |
-| 3주차 | 섹션 **2-6** ~ **3-3** | ✅         |
-| 4주차 | 섹션 **3-4** ~ **4-4** | ✅         |
-| 5주차 | 섹션 **4-4** ~ **4-9** | ✅         |
-| 6주차 | 섹션 **5-1** ~ **5-7** | 🍽️         |
-| 7주차 | 섹션 **6-1** ~ **6-6** | 🍽️         |
-
-<br>
-
-
-
-<!-- 여기까진 그대로 둬 주세요-->
-
----
-
-# 4-4. 날짜 및 시간 데이터 이해하기(2) (EXTRACT, DATETIME_TRUNC, PARSE_DATETIME, FROMAT_DATETIME)
-
-~~~
-✅ 학습 목표 :
-* 날짜 및 시간 데이터에 대해서 더 자세히 설명할 수 있다. 
-* CURRENT_TIME, EXTRACT, DATETIME_TRUNC, PARSE_DATETIME, FROMAT_DATETIME 을 설명할 수 있다. 
-~~~
-
-<!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 
 
 
@@ -129,7 +127,24 @@ DATETIME_DIFF(첫 datetime, 두번째 datetime, 궁금한 차이- day,week or mo
 ~~~
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+**CASE WHEN**: 여러 조건이 있을 경우 사용, 조건의 순서에 유의해야 함!!
+~~~
+SELECT
+ CASE
+ WHEN조건1THEN조건1이참일경우결과
+WHEN조건2THEN조건2가참일경우결과
+ELSE그외조건일경우결과
+END AS 새로운_컬럼_이름
+FROM (테이블 이름)
+~~~
+CASEWHEN에서는 첫 조건에 걸리면 바로 END로 넘어가니까, 둘 다 해당되는 조건일 경우 앞선 순서를 따르도록 구성해야 함. 
 
+**IF**: 단일조건일 때 주로 사용
+~~~
+SELECT
+IF(조건문,True일때의값,False일때의값) AS 새로운_컬럼_이름
+FROM (테이블 이름)
+~~~
 
 
  # 4-5. 시간 데이터 연습문제 & 4-7. 조건문 연습 문제
