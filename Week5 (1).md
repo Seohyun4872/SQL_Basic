@@ -16,41 +16,41 @@
 
 CURRENT_DATETIME([time_zone]): 현재의 datetime 출력
 Extract 함수: datetime에서 특정 부분만 추출하고 싶을 때 (년도, 월, 일, 시간 등)
-'''
+~~~
 EXTRACT(part FROM DATETIME "~~~~") AS ~~~
 #요일을 추출하고 싶은 경우
 EXTRACT(DAYOFWEEK FROM DATETIME "~~~") AS ~~~;
 - 1~7 중에 하나가 나오고, 1이 일요일 7이 토요일인 형태 
-'''
+~~~
 
 **DATE와 HOUR만 남기고 싶은 경우 => 시간 자르기!**
-'''
+~~~
 DATETIME_TRUNC(datetime_col,date_time_part)
 ex) DATETIME_TRUNC("2024-09-03 14:14:13", HOUR)
 --> 결과: "2024-09-03 14:00:00"
 - YEAR이나 MONTH로 자르게 되면, 가장 작은 값인 1로 전환
-'''
+~~~
 
 **PARSE_DATETIME**
 문자열 형태를 DATETIME 문자열 형태로 변환해주는 것
-'''
+~~~
 SELECT
  PARSE_DATETIME('%Y-%m-%d %H:%M:%S', '2024-01-02 11:11:11') AS parse_Datetime
 앞의 인수가 문자열의 형태, 뒤가 datetime의 문자열을 나타내주는 함수
-'''
+~~~
 **FORMAT_DATETIME**  
 반대로 DATETIME ==> 문자열로 변환해주고 싶을 때 사용함
-'''
+~~~
 SELECT
  FORMAT_DATETIME("%c", DATETIME "2024-01-11 12:35:35") AS formatted;
-'''
+~~~
 
 LAST_DAY - 마지막날을 알고 싶은 경우, 자동으로 월의 마지막 값을 계산해서 특정 연산을 진행
 DATETIME_DIFF: 두 DATETIME의 차이를 알고 싶은 경우
 DATETIME_DIFF(첫 datetime, 두번째 datetime, 궁금한 차이- day,week or month)
 
 **정리**
-'''
+~~~
 - date
 - datetime: date+time, 타임존 정보X
 - timestamp: 특정 시점에 도장찍은 값, 타임존 정보O
@@ -71,7 +71,7 @@ DATETIME_DIFF(첫 datetime, 두번째 datetime, 궁금한 차이- day,week or mo
 - DATETIME의특정부분추출:EXTRACT
 - DATETIME특정부분자르기:DATETIME_TRUNC
 - DATETIME차이구하기:DATETIME_DIFF
-'''
+~~~
 
 ### 4-5. 시간 데이터 연습문제 1~2번
 
