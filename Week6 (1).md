@@ -221,13 +221,40 @@ https://school.programmers.co.kr/learn/courses/30/lessons/164673
 
 > 조건에 부합하는 중고거래 댓글 조회하기 (JOIN)
 
+<img width="2844" height="1457" alt="image" src="https://github.com/user-attachments/assets/bb6fa589-e48c-46a3-8c1f-e834300d61bd" />
+
+~~~
+제출답안
+SELECT
+ A.TITLE, A.BOARD_ID,
+ B.REPLY_ID, B.WRITER_ID, B.CONTENTS, 
+ DATE_FORMAT(B.CREATED_DATE, '%Y-%m-%d') AS CREATED_DATE
+FROM 
+ (SELECT * FROM USED_GOODS_BOARD AS U
+  WHERE DATE_FORMAT(U.CREATED_DATE, '%Y-%m') = '2022-10') AS A
+JOIN USED_GOODS_REPLY AS B
+ON A.BOARD_ID = B.BOARD_ID
+ORDER BY B.CREATED_DATE, A.TITLE
+~~~
+
 https://school.programmers.co.kr/learn/courses/30/lessons/144854
 
 > 조건에 맞는 도서와 저자 리스트 출력하기 (JOIN)
 
 <!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. --> 
-
-
+<img width="2840" height="1457" alt="image" src="https://github.com/user-attachments/assets/07d74933-23d1-4b8b-a64b-d8b6b96be2a2" />
+~~~
+제출답안
+SELECT 
+    B.BOOK_ID,
+    A.AUTHOR_NAME,
+    DATE_FORMAT(B.PUBLISHED_DATE, '%Y-%m-%d') AS PUBLISHED_DATE
+FROM BOOK B
+JOIN AUTHOR A
+  ON B.AUTHOR_ID = A.AUTHOR_ID
+WHERE B.CATEGORY = '경제'
+ORDER BY B.PUBLISHED_DATE ASC;
+~~~
 
 ---
 
