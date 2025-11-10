@@ -95,7 +95,7 @@ Join: 2개의 테이블을 연결하는 것
 4. 결과 예상하기: 손, 엑셀 같은 걸로 작성
 5. 쿼리 작성, 검증: 실제 실행 후 예상과 동일한지 확인해보기
 
-'''
+~~~
 SELECT
  A.col1,
  A.col2,
@@ -104,26 +104,26 @@ SELECT
  FROM table1 AS A
  LEFT JOIN table2 AS B  #Leftjoin 자리에 inner, right, full join 작성 가능
  ON A.key=B.key  #키가 되는 컬럼 작성 
-'''
-'''
+~~~
+~~~
 # Cross Join은 유일하게 ON이 필수로 필요하지 않음: 어차피 키가 겹치지 않아도 다 조인되기에
 SELECT
  col
  FROM table_a AS A
  CROSS JOIN table_b AS B
-'''
+~~~
 
 * Alias를사용할수있음, 테이블 이름이 길 수 있기 때문에 별칭(Alias)을정의해줄수있음
 * 기준 테이블은 table1 이 되는 것이고, key 작성 시 table1의 키 컬럼 이름부터 작성
 * id 같은 컬럼은 겹치는 경우 존재 --> 해결법: EXCEPT(id) 사용
-'''
+~~~
 SELECT
  A.* EXCEPT(id),
  B.* EXCEPT(id)
 FROM train AS A
 LEFT JOIN trainer AS B
 ON A.id = B.id
-'''
+~~~
 
 **헷갈렸던 부분**
 1. 여러 JOIN 중 어떤 것을 사용해야 할까?
@@ -147,7 +147,7 @@ ID 같은 경우, 유니크 측면에서 자주 사용하는 편
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
 1번 문항  
-'''
+~~~
 답
 SELECT 
  kor_name, count(tp.id) AS pokemon_cnt
@@ -165,9 +165,9 @@ GROUP BY
  kor_name
 ORDER BY
  pokemon_cnt DESC
- '''
+~~~
 2번 문항
-'''
+~~~
 답
 SELECT 
  tp.*
@@ -188,11 +188,11 @@ GROUP BY
  type1
 ORDER BY
  pokemon_cnt DESC
- '''
+~~~
  * ON 뒤에 where 조건 추가 가능
 
 3번 문항
-'''
+~~~
 답
 SELECT
  COUNT(DISTINCT tp.trainer_id) AS trainer_uniq,
@@ -203,7 +203,7 @@ ON t.id = tp.trainer_id
 WHERE 
  location IS NOT NULL
  AND t.hometown = tp.location 
-'''
+~~~
 * Distinct로 겹치는 거 없애기 가능
 
 
