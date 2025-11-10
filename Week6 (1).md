@@ -243,6 +243,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/144854
 
 <!-- 정답을 맞추게 되면, 정답입니다. 이 부분을 캡처해서 이 주석을 지우시고 첨부해주시면 됩니다. --> 
 <img width="2840" height="1457" alt="image" src="https://github.com/user-attachments/assets/07d74933-23d1-4b8b-a64b-d8b6b96be2a2" />
+
 ~~~
 제출답안
 SELECT 
